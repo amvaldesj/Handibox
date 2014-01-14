@@ -9,6 +9,8 @@
 @date: December 2013
 """
 
+import config
+
 from gi.repository import Gio, Gtk
 import sys
 import os

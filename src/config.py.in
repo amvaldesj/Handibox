@@ -1,0 +1,15 @@
+from os.path import join, exists, dirname, realpath
+
+PACKAGE     = "@PACKAGE_NAME@"
+VERSION     = "@PACKAGE_VERSION@"
+
+# Allow to run uninstalled by detecting gnome-specimen.in
+if exists(join(dirname(__file__), '../handibox.in')):
+    print "Running from source directory; not using installation paths!"
+
+    source_datadir = realpath(join(dirname(__file__), '../haarcascade'))
+
+    HAARDIR     = source_datadir
+# Normal situation: use installation paths from ./configure
+else:
+    HAARDIR     = "@HAARDIR@"
